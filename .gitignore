@@ -1,0 +1,12 @@
+#django的过滤规则
+*.log
+*.pot
+*.pyc
+*.pyo
+*.sqlite3
+db.sqlite3
+media
+static
+venv
+__pycache__
+*.egg-info
