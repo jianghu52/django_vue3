@@ -49,3 +49,11 @@ class BookDetail(APIView):
         book = self.get_object(pk)
         book.delete()
         return Response(status=204)
+    
+    def post(self, request, pk):
+        book = self.get_object(pk)
+        serializer = BookSerializer(book, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=400)
